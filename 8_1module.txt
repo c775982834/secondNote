@@ -10,7 +10,6 @@ define(function(){
 		add:add
 	}
 })
-
 //Çó»ýÄ£¿é
 multiply.js
 define(function(){
