@@ -1,0 +1,52 @@
+AMD
+//求和模块
+add.js
+define(function(){
+	var x=10;
+	function(){
+		return x+y
+	}	
+	return {
+		add:add
+	}
+})
+
+//求积模块
+multiply.js
+define(function(){
+	var x=10;
+	function(){
+		return x+y
+	}	
+	return {
+		add:add
+	}
+})
+
+mian.js
+difine(['add','multiply']function(){
+	function(){
+		
+	}
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,173 @@
+PHP 变量作用域
+
+local（局部）
+global（全局）
+static（静态）
+
+<?php
+$x=5;
+$y=10;
+
+function myTest() {
+  $GLOBALS['y']=$GLOBALS['x']+$GLOBALS['y'];
+} 
+
+myTest();
+echo $y; // 输出 15
+?>
+
+
+echo 和 print 之间的差异：
+echo - 能够输出一个以上的字符串
+print - 只能输出一个字符串，并始终返回 1
+提示：echo 比 print 稍快，因为它不返回任何值。
+
+var_dump() 会返回变量的数据类型和值：
+
+
+echo strlen("Hello world!");  //strlen() 函数返回字符串的长度，以字符计。
+echo strpos("Hello world!","world");//如果找到匹配，则会返回首个匹配的字符位置。如果未找到匹配，则将返回 FALSE。
+
+1.常量第三个参数true不区分大小写;默认是false;
+define("GREETING", "Welcome to W3School.com.cn!");
+echo GREETING; 
+echo getting;	//true输出
+
+
+PHP 逻辑运算符
+and	与	$x and $y	如果 $x 和 $y 都为 true，则返回 true。
+or	或	$x or $y	如果 $x 和 $y 至少有一个为 true，则返回 true。
+xor	异或	$x xor $y	如果 $x 和 $y 有且仅有一个为 true，则返回 true。
+&&	与	$x && $y	如果 $x 和 $y 都为 true，则返回 true。
+||	或	$x || $y	如果 $x 和 $y 至少有一个为 true，则返回 true。
+!	非	!$x	如果 $x 不为 true，则返回 true。
+
+for(){}
+foreach($arr as $key=>$value){}
+
+function familyName($fname) {  //参数被定义在函数名之后，括号内部。您可以添加任意多参数，只要用逗号隔开即可。
+  echo "$fname Zhang.<br>";
+
+$cars=array("Volvo","BMW","SAAB");
+echo count($cars);//获得数组的长度 - count() 函数
+
+PHP - 数组的排序函数
+sort() - 以升序对数组排序
+rsort() - 以降序对数组排序
+asort() - 根据值，以升序对关联数组进行排序
+ksort() - 根据键，以升序对关联数组进行排序
+arsort() - 根据值，以降序对关联数组进行排序
+krsort() - 根据键，以降序对关联数组进行排序
+
+PHP 全局变量 - 超全局变量
+PHP 中的许多预定义变量都是“超全局的”，这意味着它们在一个脚本的全部作用域中都可用。在函数或方法中无需执行 global $variable; 就可以访问它们。
+这些超全局变量是：
+$GLOBALS
+$_SERVER
+$_REQUEST
+$_POST
+$_GET
+$_FILES
+$_ENV
+$_COOKIE
+$_SESSION
+
+date() 函数的格式参数是必需的，它们规定如何格式化日期或时间。
+下面列出了一些常用于日期的字符：
+d - 表示月里的某天（01-31）
+m - 表示月（01-12）
+Y - 表示年（四位数）
+1 - 表示周里的某天
+其他字符，比如 "/", "." 或 "-" 也可被插入字符中，以增加其他格式。
+下面的例子用三种不同方法格式今天的日期：
+
+<?php
+echo "今天是 " . date("Y/m/d") . "<br>";
+echo "今天是 " . date("Y.m.d") . "<br>";
+echo "今天是 " . date("Y-m-d") . "<br>";
+echo "今天是 " . date("l");
+?>
+
+版权所有 2008-<?php echo date("Y")?>  //自动排版年份
+
+获得简单的时间
+下面是常用于时间的字符：
+h - 带有首位零的 12 小时小时格式
+i - 带有首位零的分钟
+s - 带有首位零的秒（00 -59）
+a - 小写的午前和午后（am 或 pm）
+下面的例子以指定的格式输出当前时间：
+实例
+<?php
+echo "现在时间是 " . date("h:i:sa");
+?>
+
+通过 PHP mktime() 创建日期
+<?php
+$d=mktime(9, 12, 31, 6, 10, 2015);
+echo "创建日期是 " . date("Y-m-d h:i:sa", $d);
+?>
+
+PHP strtotime() 函数用于把人类可读的字符串转换为 Unix 时间。
+<?php
+$d=strtotime("10:38pm April 15 2015");
+echo "创建日期是 " . date("Y-m-d h:i:sa", $d);
+?>
+
+//
+PHP include 和 require 语句
+通过 include 或 require 语句，可以将 PHP 文件的内容插入另一个 PHP 文件（在服务器执行它之前）。
+include 和 require 语句是相同的，除了错误处理方面：
+require 会生成致命错误（E_COMPILE_ERROR）并停止脚本
+include 只生成警告（E_WARNING），并且脚本会继续
+
+//
+PHP readfile() 函数
+readfile() 函数读取文件，并把它写入输出缓冲。
+假设我们有一个名为 "webdictionary.txt" 的文本文件，存放在服务器上，就像这样：
+<?php
+echo readfile("webdictionary.txt");
+?>
+
+//
+<?php
+$myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+echo fread($myfile,filesize("webdictionary.txt"));
+fclose($myfile);
+?>
+fopen() 的第一个参数包含被打开的文件名，第二个参数规定打开文件的模式。如果 fopen() 函数未能打开指定的文件，下面的例子会生成一段消息：
+
+
+//文件会以如下模式之一打开：
+模式	描述
+r	打开文件为只读。文件指针在文件的开头开始。
+w	打开文件为只写。删除文件的内容或创建一个新的文件，如果它不存在。文件指针在文件的开头开始。
+a	打开文件为只写。文件中的现有数据会被保留。文件指针在文件结尾开始。创建新的文件，如果文件不存在。
+x	创建新文件为只写。返回 FALSE 和错误，如果文件已存在。
+r+	打开文件为读/写、文件指针在文件开头开始。
+w+	打开文件为读/写。删除文件内容或创建新文件，如果它不存在。文件指针在文件开头开始。
+a+	打开文件为读/写。文件中已有的数据会被保留。文件指针在文件结尾开始。创建新文件，如果它不存在。
+x+	创建新文件为读/写。返回 FALSE 和错误，如果文件已存在
+
+
+基本的错误处理：使用 die() 函数
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+var timer=null  // 定义一个全局的定时器变量
+oBtn.onclick = function(){
+	clearInterval(timer)// 在下一个定时器开启前清除上一个定时器
+	timer = setInterval(function(){
+		if(_left>oLine.offsetLeft){
+			oDiv.style.left = oLine.offsetLeft +'px';
+			clearInterval(timer);
+		}else{
+			oDiv.style.left = _left +'px';
+			_left +=7;
+		}	
+	},100)
+}
+
+//控制宽度变使，不能使用offsetWidth
+使用getStyle();
+避免块状元素有border;
+
+//透明度变化
+opacity: .5;
+filter: alpha(opacity=50)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

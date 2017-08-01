@@ -1,0 +1,103 @@
+var obj = {
+	"1":10
+}
+console.log(obj["1"]); //访问对象上的属性,常用的处理方式
+
+//"use strict"/
+with(obj){
+	console.log(name,age)   //对obj进行操作，严格模式下不能用
+}
+eval("var a=10,b=20;console.log(a+b)");//eval(当成js代码进行解析)，严格模式下不能访问变量a
+
+this //谁调用指向谁，严格模式下 this指向undefined
+
+删除变量
+var a=10;  //用var 来声明的，delete删不掉，不用var 直接删除。
+delete a; //普通模式下可以删除，严格模式下不能使用delete删除。
+
+function(x,x){
+		//严格模式下，重复的参数名称是不被允许的。
+}
+console.log（010）//严格模式，8进制是不被允许的。
+
+function foo(x,y){
+	var x=10;
+	console.log(x,y)	//严格模式下参数不能重名
+}
+foo(20,10)	arguments	//严格模式下追踪改变10,10	普通模式下20,10
+
+
+
+ES5 Array方法;
+
+arr.indexof(i) //判断arr中是否含有i，如果有返回对应索引，否则返回-1；
+		//低版本会报错；
+arr.forEach(function(item,index,arr){
+	不接受callback的返回值
+})
+arr.map(function(item,index,arr){
+	接受callback的返回值
+})
+arr.filter(function(item){
+	return item>2 //返回满足条件的
+})
+arr.some(function(item){
+	return item>2//只要有一个满足就返回true
+})
+arr.every(function(){
+	return item>2//只要数组中有一个不满足的返回false
+})
+arr.reduce(function(){
+	
+})
+
+String方法
+var str = "abc"
+str.charAt(num)	//返回参数指定位置的字符
+str.indexOf("a")//返回对应的索引，没找到返回-1；
+str.substring(start,end)//一个参数，从该索引位开始（包括该索引）返回剩余字符串，原字符串不变
+			//2个参数，start开始，end结束，不包括end。
+			//substring（负值）负值转换为0；	
+
+str.substr(start,length)//一个参数，从该索引位开始（包括该索引）返回剩余字符串，原字符串不变
+			//substr(-1）指str最后一个字符
+str.slice(start,end)	//如果不指定结束位置，则从指定的开始位置，取到结尾。可以写负值。
+str.split()		//字符串切割成数组
+str.replace(“需替换的字符串”,“替换后的字符串”)
+str.replace(/b/g,'*')	//正则表达式	/需要替换的字符串/gi	g表示全局 i表示忽略大小写；
+
+str.toLowerCase()//转换成小写
+str.toUppreCase()//装换成大写
+
+str.charCodeAt（index）	//通过字符获得字符编码
+String.fromCharCode()	//通过字符编码得到字符
+
+
+！！利用对象属性的方式解决去重
+obj[str[i]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

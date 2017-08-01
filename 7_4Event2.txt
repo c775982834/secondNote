@@ -1,0 +1,103 @@
+阻止浏览器默认行为
+a标签
+javascript:;
+javascript:void();
+return false;
+event.preventDefault();//IE8及以下不支持
+event.returnValue = false;//兼容IE8及高级浏览器
+
+form表单
+onsubmit 提交  //添加到form表单  
+form.onsbumit = function (){
+	return false //阻止submit提交的默认行为
+}
+2：阻止右键菜单
+document.oncontextmenu = function(){	（菜单）
+	alert("右键被按下");
+	return false;
+}
+
+1：事件流
+当页面元素触发事件的时候，该元素的容器以及整个页面都会按照特定顺序响应该元素的触发事件，事件传播的顺序叫做事件流程。
+
+一：事件流的分类
+1.冒泡型事件(所有的浏览器都支持)
+由明确的事件源到最不确定的事件源依次向上触发。
+
+2.捕获型事件(IE不支持 支持w3c标准的浏览器 火狐)
+不确定的事件源到明确的事件源依次向下触发。
+addEventListener(事件，处理函数，false);  事件在冒泡阶段执行。//默认false
+addEventListener(事件，处理函数，true) ;  事件在捕获阶段执行。
+removeEventListener
+
+绑定多个事件处理程序：
+1.自己写的。
+2.IE：（多个函数执行顺序：IE9/10按照绑定的顺序执行，IE7/8顺序相反。）
+对象.attachEvent("事件(on)","处理程序")  添加
+对象.detachEvent("事件(on)","处理程序")  删除
+火狐：（多个函数执行顺序：按照绑定的顺序执行。）
+对象.addEventListener("事件"(不加on),"处理程序",布尔值)     添加
+对象.removeEventListener("事件"(不加on),"处理程序",布尔值)  删除
+
+3.事件源
+IE：事件对象.srcElement
+火狐：事件对象.target
+
+//普通事件默认冒泡，DOM
+
+
+二：阻止事件流
+IE：事件对象.cancelBubble=true; 		(取消冒泡)
+火狐：事件对象.stopPropagation(); 		(传播)
+捕获型事件流和冒泡型事件流对可以阻止。
+
+三：执行顺序
+当元素即绑定捕获型事件又绑定冒泡型事件执行顺序：先捕获后冒泡。
+如果该元素是目标事件源对象，则谁绑定在前就先执行谁。
+
+2：阻止右键菜单
+document.oncontextmenu = function(){	（菜单）
+	alert("右键被按下");
+	return false;
+}
+3：阻止浏览器的默认行为
+非IE：ev.preventDefault();
+IE：ev.returnValue = false;
+
+利用冒泡机制，将子元素事件委托给父元素执行。
+作业：利用事件委托实现删除元素。
+5：拖拽效果
+一：拖拽原理
+三个事件：onmousedown、onmousemove、onmouseup
+实现思路：
+1：给目标元素添加onmousedown事件，拖拽的前提是在目标元素按下鼠标左键。
+2：当onmousedown发生以后，此刻给document添加onmousemove事件，意味着此刻鼠标在网页的移动都将改变目标元素的位置。
+3：在onmousemove事件中，设定目标元素的left和top，公式：
+目标元素的left = 鼠标的clientX – （鼠标和元素的横坐标差，即offsetX）
+目标元素的top = 鼠标的clientY– （鼠标和元素的纵坐标差，即offsetY）。
+4：当onmousedown发生以后，此刻给document添加onmouseup事件，意味着此刻鼠标在网页的任意位置松开鼠标，都会放弃拖拽的效果。
+5：在onmouseup事件中，取消document的onmousemove事件即可。
+二：注意事项
+	1：拖拽过程中，会选中文字，应阻止浏览器的默认行为（return false）。
+2：低版本IE下，应使用事件捕获obj.setCapture()，在mouseup时取消事件捕获obj.releaseCapture()。（释放捕获）
+三：扩展
+	1：限定拖拽范围（讲解）。
+2：带框的拖拽。
+3：保留原有位置的拖拽。
+
+
+
+cloneNode(boolean) //true 深拷贝包括子节点 false //浅拷贝
+
+//求最小值索引
+
+var minVal = Math.min.apply(null,arr_dis);
+var minIndex = arr_dis.indexOf(minVal);
+
+
+
+
+
+
+
+

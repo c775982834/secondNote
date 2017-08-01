@@ -1,0 +1,44 @@
+//作用域是程序中变量定义的范围。
+//具有全局作用域的变量称为全局变量，具有局部作用域的变量称为局部变量
+
+//函数是区分全局和局部的唯一代码块。
+//在编程中尽量少的使用全局变量。
+//函数的形参是函数内的局部变量。
+
+function foo(){
+	var a= b= 10; //a是局部变量，b是全局；就看变量前面有没有var
+}
+
+//递归函数：函直接或间接调用它本身
+
+事件
+onclick
+ondblclick
+onfocus
+onblur
+onchange
+
+mouseover(冒泡)
+mouseout（冒泡）
+mousedown
+mouseup
+
+//对象：无序的值的集合，由属性和方法组成。
+var obj = {
+	name:'john',
+	sayHello:function(){
+		console.log('aaa');
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

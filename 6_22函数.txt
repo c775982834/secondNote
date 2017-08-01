@@ -1,0 +1,51 @@
+函数是由事件驱动的，或者当他被调用时可重复执行的代码块
+可维护性，可扩展性。
+
+//函数的声明
+//在语法格式的书写上，[]表示可选，arg1,arg2,arg3表示的是参数，...表示参数个数不限制
+function 函数名 （[arg1,arg2,arg3,...]）{
+	//函数体
+	//statements  语句块
+}
+
+//函数表达式
+var functionName = function([arg1,arg2,arg3,...]){
+	//函数体
+	//statements
+}
+形参：在定义时给定的参数；
+实参：在函数调用时传入的值；
+
+
+afternoon：
+
+预编译：//变量提升 var a; undefined
+	//函数声明提升，变量在函数声明之前
+a();
+function a (){
+	//整个函数提升	
+}
+var a= function(){
+	//提升的是  var a;  // a is not function
+}
+
+//arguments 类数组对象，函数参数的集合
+
+//return 1、返回函数的执行结果 ，如果return后不跟具体的值，默认返回undefined 
+	 如果没有写return，默认返回的也是undefined。
+	 2、结束函数的执行。
+	 for循环里面不能用return
+
+
+
+第一题：11,33，不输出 if(i=j)
+
+
+
+
+
+
+
+
+
+

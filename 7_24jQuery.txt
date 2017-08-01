@@ -1,0 +1,165 @@
+$('#box')[0]
+$('.box).get(0) //jquery对象转换成dom对象
+
+$(this).addClass("cur").sibling().removeClass("cur")
+
+$("form >input")
+$('label + input')
+$("$ul:first-child ~ ul")
+$("li:first")
+$("input:not(name)")
+$("tr:even")
+$("tr:odd")
+$("#box").eq(0)
+$("li:contains(1)")
+$("li:empty")
+$("li:parent")
+
+$("input[name='new']").attr("checked",true)
+$("input:enabled")
+
+动画
+animate({},2000,function(){})
+stop(true,true) //第二个true完成当前动画执行下一个动画
+finish() //不会出现动画，直接完成。
+
+
+$.ajax({
+	tye:"get",
+	url:"data.json",
+	async:true,
+	success:function(data){
+		console.log(data)
+	},
+	error:function(){
+		
+	}
+})
+
+$.ajax({
+	tye:"get",
+	url:"data.json",
+	dataType:"jsonp",
+	async:true,
+	success:function(data){
+		console.log(data)
+	}
+})
+$.getJSON("url",function(data){
+	console.log(data)
+})
+
+
+
+return arguments.callee    //返回函数本身
+
+select
+
+after
+before
+
+
+获取览器显示区域的高度 ： $(window).height(); 
+获取浏览器显示区域的宽度 ：$(window).width();
+获取页面的文档高度 ：$(document).height();
+获取页面的文档宽度 ：$(document).width();
+获取滚动条到顶部的垂直高度 ：$(document).scrollTop();
+获取滚动条到左边的垂直宽度 ：$(document).scrollLeft();
+
+
+
+插件写法
+//给jquery对象添加方法
+$.fn.extend({
+	foo:function(){
+		this.css({"background":"yellow","color":"red"})
+	}
+})
+$(function(){
+	$("#box").foo()	
+})
+
+$.fn.foo = function(){}
+
+//给jQuery类本身添加方法
+$.extend({
+	sum:function(x,y){
+		return x+y;
+	}
+})
+
+
+//深拷贝浅拷贝
+var defaults = {
+	name:"chen",
+	age:20
+}
+var opts={
+	name:"zhao",
+	age:20,
+	sexy:"female"
+}
+//浅拷贝
+var result = $.extend(defaults,opts)
+
+//深拷贝
+var result = $.extend(true,{},defaults,opts)
+//defaules,opts:参数集合不会发生改变
+//result:同名属性覆盖，不同属性添加到改对象里
+
+
+$.fn.foo = function(){
+	var defaults = {
+		str:'输出默认值'
+	}
+	var oprions = $.extend(true,{},defaults,opts)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

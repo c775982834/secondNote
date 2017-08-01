@@ -1,0 +1,14 @@
+cookie的使用、方法、属性：
+	获取、设置cookie：
+		document.cookie = "key=value";		写入cookie
+		var iCookie = document.cookie;		获取所以cookie
+		注：设置多个cookie值得时候应该使用数组或者对象形式写入cookie 
+			写入的时候使用JSON.stringify(obj) 进行格式转换(将对象或者数组装换成json数据)
+			读取的时候使用JSON.parse(documen.cookie) 进行格式转换(将json数据转换成字符串) 
+	完整设置cookie
+		document.cookie = "key=value;expires=DATE;path=PATH;domain=URL";
+			expires		设置过期时间，不设置默认页面关闭
+			path		设置路径
+			domain		设置域名
+		注：在设置中文路径的情况下 应该使用 encodeURIComponent('XXX') 进行编码
+			使用 decodeURIComponent('XXX') 进行解码 解决中文乱码问题

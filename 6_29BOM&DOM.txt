@@ -1,0 +1,124 @@
+BOM对象
+提供了独立页面内容而与浏览器进行交互的对象，核心对象是window.
+navigator.userAgent //浏览器代理检测
+location.href= url  //跳转到地址为url的页面	
+location.search
+
+assign(url) //加载新文档
+replace(url)用新的文档代替当前的文档。但不会在 History 对象中生成一个新的记录。
+	    当使用该方法时，新的 URL 将覆盖 History 对象中的当前记录。
+reload(boolean)//刷新本页面
+
+window.open(url,name,feature,replace)
+window.close();
+window.alert();
+window.confirm();//该方法有返回值，点击确定返回true，点击取消返回false。
+window.prompt();
+
+history.go(-1) history.back();//后退
+history.go(1)  history.forward();//前进
+
+scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft
+
+clientHeight = document.documentElement.clientHeight;
+clientWidth  = document.documentElement.clientWidth;
+
+window.onscroll = function (){
+	//滚动条滚动执行
+}
+window.onresize = function(){
+	//浏览器窗口改变执行
+}
+
+//定时器，异步的，定时器后面的代码先执行，设置时间间隔为0，他有有一个默认的
+最小时间间隔。
+setInterval()里的this通常指向window
+setInterval(function(){
+	
+},1000)
+
+clearTimeout()
+//延时器 一个时间间隔后执行一次代码
+setTimeout(function(){
+	
+},1000)
+
+
+DOM
+document.getElementById()   //前面的对象只能是document
+document.getElementsByTagMame()[i]//要有索引取到具体的
+document.getElementsByClassName()//有兼容性问题
+document.getElementsByName()
+document.querySelectorAll()//h5
+
+
+document.createElement("div")
+document.createTextNode("xxxxx")
+
+oTest.appendChild(txt) //添加节点
+otest.insertBefore()
+removeChild()	//删除节点
+//替换元素是新创建的节点，直接替换
+//替换元素是页面中已存在的节点，挪位置
+被替换元素必须是oTest的子节点
+oTest.replaceChild(替换元素，被替换元素)	//替换节点
+
+//获取style
+getComputedStyle();//获取所有样式
+getComputedStyle()['attr'];//获取具体样式
+currentStyle;
+
+
+
+
+obj.attributes
+obj.attribures[0]
+obj.getAttribute('id')//默认属性/自定义属性
+obj.setAttribute("id","test")
+obj.removeAttribute("id")
+
+4：节点信息（属性）
+	     节点类型            节点名字       节点值
+            nodeType(数值)      nodeName       nodeValue
+元素节点         1               标签名          null   
+属性节点         2               属性名         属性值
+文本节点         3               #text           文本
+注释节点         8               #comment      注释的文字
+文档节点         9               #document       null
+
+
+2：通过节点的关系属性来获得节点的引用。
+对象.parentNode  获得父节点的引用。
+对象.childNodes  获得子节点的集合，包括空白节点。IE7/8不包含空文本节点，但IE7包含首个注释节点（前面没有元素节点），IE8包含所有的注释节点。
+对象.children    获得子节点的集合，不包含空白节点。但IE7包含首个注释节点（前面没有元素节点），IE8包含所有的注释节点。
+
+高级选取
+对象.firstChild  获得第一个子节点。（IE7/8非空白节点，可能是注释节点）
+对象.firstElementChild  获得第一个非空白的子节点。（IE7/8不支持）
+对象.lastChild   获得最后一个子节点。（IE7最后一个元素节点，IE8最后一个非空白节点，可能是注释节点）
+对象.lastElementChild   获得最后一个非空白的子节点。（IE7/8不支持）
+对象.nextSibling 获得下个兄弟节点的引用。 （包括空白节点和注释。IE7/8包括注释节点，不包括空白节点。）
+对象.nextElementSibling 获得下个兄弟节点的引用。 （IE7/8不支持）
+对象.previousSibling 获得上个兄弟节点的引用。（包括空白节点和注释。 IE7/8包括注释节点，不包括空白节点。）
+对象.previousElementSibling 获得上个兄弟节点的引用。（IE7/8不支持）
+缺点：兼容性不好。
+
+
+clientWidth
+clientHeight
+
+offsetWidth
+offsetHeight
+获取具有定位属性的
+offsetLeft
+offsetTop
+offsetParent
+
+
+
+
+
+
+
+

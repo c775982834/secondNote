@@ -1,0 +1,147 @@
+<?php
+	header("content-type:text/html;charset=utf-8");
+    echo "hello world";
+    echo "<h2>标题</h2>";
+    //定界符
+    $str = <<<EOD  //EOD开始，EOD结束，前面不能又空格
+    	<h2>标题</h2>
+    	<p></p>
+	EOD;
+	echo $str;
+?>
+
+console.log()
+//测试
+var_dump($a)
+字符串拼接用点;
+
+预定义变量
+
+1.服务器变量$_SERVER,保存头信息，路径，脚本位置等的数组
+2.Cookie变量$_COOKIE，保存cookie值的数组
+3.HTTP GET变量$_GET，保存url请求和表单get提交的变量的数组
+4.HTTP POST变量$_POST，保存post方法生成的变量的数组
+5.Request变量$_REQUEST，包括2，3，4
+
+
+数组(带索引，不带索引)
+$arr = array(1,2,3);
+$arr1= array('a'=>1,'b'=>2,'c'=>3);
+var_dump($arr,$arr[0])
+3.二维数组
+$arr =  array(array(1,2,3),array(4,5,6)) //[[],[]]
+4.使用变量创建数组
+$a ="aaa";
+$b = "bbb";
+$c = array("ccc","ccc");
+$result = compact("a","b","c");
+4.使用变量创建数组compact()    $a = “aaa”;$b = “bbb”;$c=array(1,2);  compact(“a”,”b”,”c”);
+“a”,”b”,”c”在结果中对应key值
+
+5.使用两个数组创建一个数组  $a=array(1,2,3);$b=array(“a”,”b”,”c”); array_combine($a,$b);
+$a的值为key，$b的值为value
+6.建立指定范围单元的数组range(start,end,step)
+
+
+
+数组方法
+
+1.in_array($val,$arr)  判断数组中是否包含某个值，返回布尔值
+2.取得键名和键值 array_keys($arr)       array_values($arr)
+3.移除数组中重复的值,返回去重之后的数组 array_unique($arr)
+4.list($a,$b) = $arr;把数组中的值赋给指定的变量
+5.foreach($arr as $val) 遍历数组
+6.计算数组的长度 count($arr)
+7.添加删除 array_push($arr,1,2) array_pop($arr)
+8.统计数组中所有的值出现的次数array_count_values($arr) 
+
+
+类和对象
+
+类的创建（由变量和函数组成，变量称为属性，函数称为方法）
+
+对象的创建
+
+public:可以内部调用，实例调用等。
+protected: 受保护类型，用于本类和继承类调用。
+private: 私有类型，只有在本类中使用。
+
+
+<?php
+	class Person {
+		public $name = "join";
+		protected $weight = 150;
+		private $age = 22;
+		function foo(){
+			echo $this->name;
+		}
+	}
+class Male extends Person{   //extexds继承
+	public $sexy = "male";
+	function (){
+	
+	}
+}
+$person1 = new Person();
+$person1->foo();
+echo 
+?>
+
+->是调用的意思
+
+
+
+PHP与JSON
+
+常用方法
+
+1.isset($a)判断一个变量是否定义
+2.json_encode($val) 用于对变量进行 JSON 编码，该函数如果执行成功返回 JSON 数据，
+否则返回 FALSE。 json_encode($students,JSON_UNESCAPED_UNICODE)
+3.json_decode($val,true) 函数用于对 JSON 格式的字符串进行解码，并转换为 PHP 变量。
+true表示转换成数组，false转换成对象。
+
+
+连接 MySQL
+在我们访问 MySQL 数据库前，我们需要先连接到数据库服务器：
+实例 (MySQLi - 面向对象)
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+ 
+// 创建连接
+$conn = new mysqli($servername, $username, $password);
+ 
+// 检测连接
+if ($conn->connect_error) {
+    die("连接失败: " . $conn->connect_error);
+} 
+echo "连接成功";
+?>
+
+
+
+
+实例 (MySQLi - 面向过程)
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+ 
+// 创建连接
+$conn = mysqli_connect($servername, $username, $password);
+ 
+// 检测连接
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "连接成功";
+?>
+
+
+
+
+
+
+

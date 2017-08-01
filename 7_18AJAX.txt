@@ -1,0 +1,64 @@
+1.创建Ajax对象
+new XMLHttpRequest();
+new ActiveXObject("Microsoft.XMLHTTP")  //IE6
+
+2.xhr.open(type, url, async, user, password);
+在AJAX中，其实我们就是来模拟正常的表单提交数据。正常的表单在POST数据时，
+会发送Content-Type字段，所以我们在AJAX中就要指定该字段值为application/x-www-form-urlencoded。
+并且对字段名称和值进行编码处理在发送。使用setRequestHeader：单独指定请求的某个HTTP头。
+
+3.send();发送请求到HTTP服务器并接收回应
+4：等待并接收服务器返回的处理结果。
+5：客户端接收。
+6：释放XMLHttpRequest对象。
+
+回调函数
+通过onreadystatechange属性指定readystate属性改变时的事件处理回调函数。
+xhr.onreadystatechange = function(){}
+readyState属性：返回请求的当前状态。
+状态：
+0：对象已建立，尚未初始化（未调用open方法）。
+1：对象已建立，尚未调用send方法。
+2：send方法已调用。但是当前的状态以及HTTP状态未知。
+3：开始接收数据，因为响应以及HTTP头不全，这时通过responseBody和responseText获取部分数据会出现错误。
+4：数据接收完毕，此时可以通过responseBody和responseText获取完整的响应数据。
+status属性：返回当前请求的状态码。
+200 OK：请求文档已经找到，并正确返回。
+304 Not Modified：拥有一个本地的缓存副本，服务器端内容与此相同。
+403 Forbidden：请求者对所请求的文档不具有相应的权限。
+404 Not Found：请求的文档没找到。
+statusText属性：返回当前请求的响应行信息。（ok，Not Modified，Forbidden，Not Found）
+responseXML属性：将响应信息格式化为XML Document对象返回。
+responseText属性：将响应信息作为字符串返回。
+
+状态码分类：
+1**信息 服务器接收到请求，需继续操作。
+2**
+3**
+4**
+5**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

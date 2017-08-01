@@ -1,0 +1,63 @@
+javascript是基于对象和事件驱动，并具有安全性能的客户端脚本语言。
+解释执行
+由三部分组成：ECMAScript核心？DOM？（文档对象模型）BOM？（浏览器对象模型）
+变量的命名规则：
+变量是由数字、字母、下划线和美元（$）的一种或者几种组成，且不能以数字开头，严格
+区分大小写。
+
+num.toFixed(小数的位数)//保留n位小数
+num.parseInt()	//取整parseInt（参数，进制）转换为十进制
+num.parseFloat()
+prompt（'请输入'）
+
+数据类型及类型转换
+数值、字符串（string）、布尔（boolean）、undefined、null、对象
+
+javascript类型转换
+隐式转换	显示转换
+typeof //检测数据类型
+console.log(typeof typeof 10)  //string 
+
+
+数据类型的转换
+//javascript是一个弱类型的语言，一旦我们确定了一个变量的类型了之后，就不要再去改变了。
+document.write()//在页面中输出
+除了+，其他运算都会隐式转换
+true转换成数值是1	false转换成0；
+数值+undefined	//NAN
+null	转换为数值0;
+
+显式转换:
+Number（）；
+Boolean();空格//true;字符串true ；null//false；undefined//false
+
+
+逻辑运算符：
+&&    左边的操作值是真的 返回右边的
+||    左边是真的返回左边的值
+！
+
+自增运算符
+a++    先赋值，再加1  var b=a ;a = a+1                
+++a    先+1，再赋值       a=a+1; c=a;
+a--
+
+8进制与16进制
+8进制在数值前面加0；
+16进制在数值前面加0x
+
+console.log(NaN ==NaN)//false  NaN是一个特殊的数值，不等于任何一个数值，包括他自己
+console.log(Number(undefined)) //NaN
+console.log(Number(NaN))    //0
+
+
+回顾：
+//转换成false
+//0 '' undefined null NaN
+var a=10,b=undefined,c=null;
+console.log(a/c);
+console.log(10/0);//无穷大
+console.log(''+5-5);//NaN
+
+
+

@@ -1,0 +1,53 @@
+Math.PI  //pi 的值；
+Math.abs
+Math.ceil //向上取整
+Math.floor//向下取整
+Math.round
+Math.max()
+Math.min()
+Math.random()	Math.random()*(n-m)+m  //m-n的随机数
+Math.pow(x,y)//x的y次幂
+Math.sqrt(x)//开平方
+
+text.style.backgroundColor = x
+text.style.cssText = x
+
+日期对象
+var data = new Date("2017-06-17")
+var data = new Date("2017/06/17 12:00:00")
+
+oDate.getDate()//返回一个月某一天（1-31）
+oDate.getDay() //一周中的某一天（0-6）
+oDate.getMonth()//（0-11）
+oDate.getFullYear()//四位数字的年份
+oDate.getHours()//0-23
+oDate.getMinutes()//0-59
+oDate.getSeconds()//0-59
+oDate.getMilliseconds()//0-999毫秒
+oDate.getTime()//获取时间戳
+
+oDate.setDate()
+
+console.log(Date.parse("2017-06-28"))//把字符串转换成时间戳
+console.log(new Date(1000*60))
+
+var Timer = setInterval(function(){
+	
+},1000)
+clearInterval(Timer);
+
+倒计时：先设置时间date  var oDate = new Date();
+		ss = date-oDate
+
+
+
+
+
+
+
+
+
+
+
+
+

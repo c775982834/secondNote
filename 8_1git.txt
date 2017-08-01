@@ -1,0 +1,38 @@
+git init 			//初始化
+git add  redeme.text  		//添加
+git commit -m "beizhu"		//提交
+git status 			//查看状态
+git diff   			//查看不同
+git log  			//命令显示从最近到最远的提交日志
+git reset --hard HEAD^		//回到上个版本
+git reset --hard f0493ab	//
+git reflog			//查看所有历史记录
+git checkout --readme.txt	//意思就是，把readme.txt文件在工作区的修改全部撤销
+
+$ rm test.txt			//工作区删除
+$ git rm test.txt		//版本库上删除
+$ git commit - m "modify"	//在提交一下
+另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：
+$ git checkout -- test.txt
+git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”
+
+远程仓库
+$ ssh-keygen -t rsa -C "youremail@example.com"
+去c盘复制 id_rsa.pub 到 gitHub Edit
+创建远程仓库
+再复制两条命令
+
+git clone git@github.com:c775982834/chen.git	//拉代码
+
+$ git checkout -b dev			//创建分支
+$ git checkout dev 			//切换分支	主分支master
+$ git merge dev				//合并分支
+$ git branch -D dev			//删除分支
+$ git branch				//查看分支
+$ git log --graph			//命令可以看到分支合并图。
+
+
+
+
+
+

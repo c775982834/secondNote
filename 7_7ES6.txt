@@ -1,0 +1,44 @@
+Babel loader 安装	
+npm install –g babel-cli 
+(npm install  -g  cnpm --registry=https://registry.npm.taobao.org)
+var obj={
+	val=10;
+	getval:function(){
+		console.log(this.val)
+	}
+}
+var obj2={
+	val:20;
+}
+obj.getVal.call(obj2，参数) //改变this指向 可以传参数
+obj.getVal.apply(obj2，[参数])
+Math.min.apply(null,arr)
+obj.getVal.bind(obj1)();
+
+//箭头函数this指向定义时的作用域，不是执行时的作用域
+
+a=Symbol("name")
+Array.from()//把类数组转换成数组
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

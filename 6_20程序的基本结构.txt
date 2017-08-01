@@ -1,0 +1,39 @@
+//逻辑分支（选择结构）
+if（条件）{//条件成立时要执行的语句}
+radio.checked //选中true
+window.onload //表示页面加载完毕之后执行花括号里面的代码
+
+if(-10<=cha<=10){}       //先解析-10<=cha   boolean 值   true转换成1、false转换成0
+
+switch（表达式）{     //表达式值与case的值必须全等
+	case 值1：    //当表达式的值为1时，可执行代码
+	break;        //防止case穿透
+	case 值2；    //当表达式的值为2时，可执行代码
+	break;
+	default:	//当以上的值和表达式的值都不匹配是，执行
+	
+}//在碰到break或者右花括号的时候结束
+
+运算优先级
+&& 优先级大于 ||
+
+var date = new Date()      //new一个日期对象
+    day  = date.getDay();  //获取周几
+	 = date.getDate()  //获取当月几号
+	 = date.getMonth() //获取月份
+	 = date.getFullYear//获取4位数年份
+
+
+回顾：
+parseInt
+console.log('111' == '111.0',111 == '111.0') //false ,true
+
+isNaN(）
+
+
+
+
+
+
+
+

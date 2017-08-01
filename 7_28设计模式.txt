@@ -1,0 +1,53 @@
+//工厂模式
+		function Factory(type,text){
+			//this[type](text);
+			if(this instanceof Factory){     //instanceof 
+				this[type](text);
+			}else{
+				new Factory(type,text)
+			}
+		}
+		Factory.prototype = {
+			H5:function(text){
+				console.log(text)
+			},
+			JS:function(text){
+				console.log(text)
+			}	
+		}
+		console.dir(Factory)
+		new Factory('H5','1111')
+
+1.instanceof的普通的用法，obj instanceof Object 检测Object.prototype是否存在于参数obj的原型链上。
+2.继承中判断实例是否属于它的父类
+
+
+//观察者模式又称发布-订阅者消息机制，定义了一种依赖关系，解决了主体对象和依赖者之间功能的耦合
+
+// Object.defineProperty  将不可枚举的方法转变成可枚举的方法
+Object.defineProperty(this,"handlers",{  
+	enumerable:false
+})
+
+//代理模式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
